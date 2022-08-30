@@ -37,8 +37,8 @@ skipsdist = True
 The ``testenv:build_standalone`` section requires
 [Lark](https://github.com/lark-parser/lark) as a dependency. The
 ``commands`` setting runs Lark's stand-alone tool taking a grammar
-file as input (named ``json.g``) and generating a stand-alone parser
-module as output (named ``standalone_module.py``):
+file as input (``json.lark``) and generating a stand-alone parser
+module as output (``standalone_module.py``):
 
 ```ini
 ...
@@ -49,7 +49,7 @@ description =
 deps =
     lark
 commands =
-    python -m lark.tools.standalone --out="standalone_module.py" json.g
+    python -m lark.tools.standalone --out="standalone_module.py" json.lark
 
 ...
 ```

@@ -22,8 +22,8 @@ elif LARK_DEMO_MODE == 'dependency':
 
     def make_parser(make_transformer):
         """Helper function to create parser instance."""
-        with open('json.g') as f:
-            grammar = f.read()
+        with open('json.lark') as f:
+            grammar = f.read()  # Get entire file as a string.
         transformer = make_transformer()
         return Lark(grammar, parser='lalr', transformer=transformer)
 
